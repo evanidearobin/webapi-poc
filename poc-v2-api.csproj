@@ -12,11 +12,14 @@
       <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.UnitTesting" Version="11.0.50727.1" />
     <PackageReference Include="MongoDB.Bson" Version="2.10.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.10.0" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.10.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Moq" Version="4.13.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,5 +32,18 @@
     <Compile Remove="Models\BookstoreDatabaseSettings.cs" />
     <Compile Remove="Services\BookService.cs" />
     <Compile Remove="Controllers\ValuesController.cs" />
+    <Compile Remove="poc-v2-api\poc-v2-api\UnitTest1.cs" />
+    <Compile Remove="Controllers\TestRegisterController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="poc-v2-api\poc-v2-api\obj\poc-v2-api.csproj.nuget.cache" />
+    <None Remove="poc-v2-api\poc-v2-api\obj\poc-v2-api.csproj.nuget.g.props" />
+    <None Remove="poc-v2-api\poc-v2-api\obj\poc-v2-api.csproj.nuget.g.targets" />
+    <None Remove="poc-v2-api\poc-v2-api\obj\Debug\netcoreapp2.2\poc-v2-api.assets.cache" />
+    <None Remove="poc-v2-api\poc-v2-api\obj\Debug\netcoreapp2.2\poc-v2-api.csprojAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="poc-v2-api\poc-v2-api\obj\poc-v2-api.csproj.nuget.dgspec.json" />
+    <Content Remove="poc-v2-api\poc-v2-api\obj\project.assets.json" />
   </ItemGroup>
 </Project>
