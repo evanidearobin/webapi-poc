@@ -4,9 +4,16 @@ using Users.Models;
 
 namespace Users.Services
 {
-    public class UserService
+    public interface IUserService
+    {
+        User Create(User user);
+
+    }
+
+    public class UserService : IUserService
     {
         private readonly IMongoCollection<User> _users;
+
         public UserService(IUsersDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
@@ -15,15 +22,15 @@ namespace Users.Services
             _users = database.GetCollection<User>(settings.UsersCollectionName);
         }
 
-
         public List<User> Get() => _users.Find(user => true).ToList();
         
         public User Get(string id) => _users.Find<User>(user => user.Id == id).FirstOrDefault();
-        
+
         public User Create(User user)
         {
             _users.InsertOne(user);
-            return user;
+            throw new System.NotImplementedException();
+            //return user;
         }
 
         
